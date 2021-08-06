@@ -15,7 +15,7 @@ class Grafo:
 
 	def grau(self, v):
 		grau = 0
-		for aresta in self.pesos.keys:
+		for aresta in self.pesos.keys():
 			if v == aresta[0]:
 				grau += 1
 		return grau
@@ -25,13 +25,13 @@ class Grafo:
 
 	def vizinhos(self, v):
 		vizinhos = []
-		for aresta in self.pesos.keys:
+		for aresta in self.pesos.keys():
 			if v == aresta[0]:
 				vizinhos.append(aresta[1])
 		return vizinhos
 
 	def haAresta(self, u, v):
-		for aresta in self.pesos.keys:
+		for aresta in self.pesos.keys():
 			if (u, v) == aresta:
 				return True
 		return False
@@ -56,13 +56,13 @@ class Grafo:
 
 		arc_or_edge = conteudo_grafo[i + 2]
 		i += 3
-		if arc_or_edge == "*arcs":
+		if arc_or_edge == "*arcs\n":
 			for j in range(i, len(conteudo_grafo)):
 				linha = conteudo_grafo[j].split()
 				arco = (int(linha[0]), int(linha[1]))
 				self.pesos[arco] = float(linha[2])
 
-		if arc_or_edge == "*edges":
+		if arc_or_edge == "*edges\n":
 			for j in range(i, len(conteudo_grafo)):
 				linha = conteudo_grafo[j].split()
 				arco1 = (int(linha[0]), int(linha[1]))
@@ -70,4 +70,6 @@ class Grafo:
 				self.pesos[arco1] = float(linha[2])
 				self.pesos[arco2] = float(linha[2])
 
-		self.num_arestas = len(self.pesos.keys)
+		self.num_arestas = len(self.pesos.keys())
+
+grafo1 = Grafo("teste.txt")
