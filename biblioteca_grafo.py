@@ -65,10 +65,16 @@ class Grafo:
 		if arc_or_edge == "*edges\n":
 			for j in range(i, len(conteudo_grafo)):
 				linha = conteudo_grafo[j].split()
+				arco = (int(linha[0]), int(linha[1]))
+				self.pesos[arco] = float(linha[2])
+			'''
+			for j in range(i, len(conteudo_grafo)):
+				linha = conteudo_grafo[j].split()
 				arco1 = (int(linha[0]), int(linha[1]))
 				arco2 = (int(linha[1]), int(linha[0]))
 				self.pesos[arco1] = float(linha[2])
 				self.pesos[arco2] = float(linha[2])
+			'''
 
 		self.num_arestas = len(self.pesos.keys())
 
