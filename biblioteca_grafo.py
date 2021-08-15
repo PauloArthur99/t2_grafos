@@ -1,5 +1,8 @@
+import math
+
 class Grafo:
 	def __init__(self, file_name):
+		self.inf = math.inf #infinito
 		self.file_name = file_name
 		self.labels = []
 		self.pesos    = {}
@@ -72,4 +75,11 @@ class Grafo:
 
 		self.num_arestas = len(self.pesos.keys())
 
-grafo1 = Grafo("teste.txt")
+	def transpor(self):
+		b = {}
+		for key, value in self.pesos.items():
+			b[(key[1],key[0])]=value
+		self.pesos = b
+
+
+
