@@ -1,5 +1,8 @@
+import math
+
 class Grafo:
 	def __init__(self, file_name):
+		self.inf = math.inf #infinito
 		self.file_name = file_name
 		self.labels = []
 		self.pesos    = {}
