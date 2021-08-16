@@ -25,5 +25,5 @@ def dfs_Visit_OT(grafo,i,c,ordem_T):
     ordem_T.insert(0,i)
     return (c,ordem_T)
 
-grafo1 = Grafo("teste3.txt")
+grafo1 = Grafo("teste2.txt")
 ordem_topologica(grafo1)
