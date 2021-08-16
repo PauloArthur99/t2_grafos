@@ -55,7 +55,7 @@ class Grafo:
 		
 		for i in range(self.num_vertices):
 			linha = conteudo_grafo[i + 1].split()
-			self.labels.append(linha[1])
+			self.labels.append(linha[1:])
 
 		arc_or_edge = conteudo_grafo[i + 2]
 		i += 3
