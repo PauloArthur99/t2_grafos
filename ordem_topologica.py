@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 from biblioteca_grafo import Grafo
 
 def ordem_topologica(grafo):
@@ -13,6 +14,9 @@ def ordem_topologica(grafo):
     for k in ordem_T:
         new_ordem_T.append(grafo.rotulo(k))
     
+    for x in range(len(new_ordem_T)):
+        new_ordem_T[x] = (' '.join(new_ordem_T[x]))
+    
     print(" -> ".join(new_ordem_T))
 
 def dfs_Visit_OT(grafo,i,c,ordem_T):
@@ -25,5 +29,5 @@ def dfs_Visit_OT(grafo,i,c,ordem_T):
     ordem_T.insert(0,i)
     return (c,ordem_T)
 
-grafo1 = Grafo("teste2.txt")
+grafo1 = Grafo("teste3.txt")
 ordem_topologica(grafo1)
