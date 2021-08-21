@@ -28,7 +28,11 @@ def kruskal(grafo):
     for aresta in arvore:
         custo += grafo.peso(aresta[0], aresta[1])
     print(custo)
-    print(arvore)
+    for i in range(len(arvore) - 1):
+        print(arvore[i][0],"-", sep='', end='')
+        print(arvore[i][1],", ", sep='', end='')
+    print(arvore[-1][0],"-", sep='', end='')
+    print(arvore[-1][1])
 
 grafo_teste = Grafo("teste_kruskal.txt")
 
